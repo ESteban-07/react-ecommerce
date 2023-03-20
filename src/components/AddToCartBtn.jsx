@@ -1,7 +1,7 @@
 function AddToCartBtn() {
   return (
-    <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
-      Click Me
+    <button>
+      <img src="src/assets/icons/bt_add_to_cart.svg" alt="" />
     </button>
   );
 }

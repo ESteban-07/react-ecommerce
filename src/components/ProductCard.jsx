@@ -2,13 +2,15 @@ import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {
   return (
-    <div className="product-item" id={product.id}>
-      <img
-        src={product.images[0]}
-        alt={product.description}
-        style={{ width: '360px', height: '360px' }}
-      />
-      <div>
+    <div className="w-60" id={product.id}>
+      <figure className="rounded-xl overflow-hidden">
+        <img
+          className="w-full h-full object-cover"
+          src={product.images[0]}
+          alt={product.description}
+        />
+      </figure>
+      <div className="flex justify-between">
         <div>
           <p>{product.price}</p>
           <p>{product.title}</p>

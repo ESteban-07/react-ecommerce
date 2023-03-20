@@ -11,7 +11,7 @@ function App() {
 
   return (
     <>
-      <div className="main-grid">
+      <div className="grid grid-cols-fit-60 place-content-center gap-7">
         {products.map((product) => (
           <ProductCard key={product.id} product={product} />
         ))}

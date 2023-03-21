@@ -13,7 +13,12 @@ function ProductsContextProvider(props) {
 
   return (
     <ProductsContext.Provider
-      value={{ products, setProducts, cartProducts, setCartProducts }}>
+      value={{
+        products,
+        setProducts,
+        cartProducts,
+        setCartProducts,
+      }}>
       {props.children}
     </ProductsContext.Provider>
   );

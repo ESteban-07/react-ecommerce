@@ -23,7 +23,7 @@ function ProductCard({ product }) {
         <AddToCartBtn
           handleClick={() => {
             // toggle styles to current card
-            cardRef.current.classList.toggle('product-added');
+            // cardRef.current.classList.toggle('product-added');
 
             setCartProducts((prevProducts) => {
               const isProductAlreadyInCart = prevProducts.find(
@@ -35,6 +35,7 @@ function ProductCard({ product }) {
                 : [...prevProducts, product];
             });
           }}
+          productTitle={product.title}
         />
       </div>
     </div>

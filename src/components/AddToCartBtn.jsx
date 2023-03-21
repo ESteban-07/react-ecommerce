@@ -7,13 +7,11 @@ function AddToCartBtn({ handleClick, productTitle }) {
 
   return (
     <button
-      className="w-10 h-10"
       onClick={() => {
         handleClick();
         setProductState((current) => !current);
       }}>
       <img
-        className="object-contain"
         src={productState ? AddedToCartIcon : AddToCartIcon}
         alt={`Add ${productTitle} to cart`}
       />

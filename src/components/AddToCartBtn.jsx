@@ -1,6 +1,6 @@
-function AddToCartBtn() {
+function AddToCartBtn({ handleClick }) {
   return (
-    <button>
+    <button onClick={handleClick}>
       <img src="src/assets/icons/bt_add_to_cart.svg" alt="" />
     </button>
   );

@@ -7,6 +7,11 @@ function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
 
+  const currency = new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  });
+
   useEffect(() => {
     API.getProducts().then((data) => setProducts(data));
   }, []);
@@ -18,6 +23,7 @@ function ProductsContextProvider(props) {
         setProducts,
         cartProducts,
         setCartProducts,
+        currency
       }}>
       {props.children}
     </ProductsContext.Provider>

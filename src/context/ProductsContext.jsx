@@ -42,6 +42,8 @@ function ProductsContextProvider(props) {
     return cartProducts.includes(product);
   };
 
+  const cartCounterValue = cartProducts.length;
+
   return (
     <ProductsContext.Provider
       value={{
@@ -53,6 +55,7 @@ function ProductsContextProvider(props) {
         totalPayment,
         isCurrentItemInCart,
         toggleItemFromCart,
+        cartCounterValue,
       }}>
       {props.children}
     </ProductsContext.Provider>

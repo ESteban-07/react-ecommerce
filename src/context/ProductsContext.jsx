@@ -1,4 +1,4 @@
-import { useState, useEffect, createContext } from 'react';
+import { useState, useEffect, createContext, useRef } from 'react';
 import * as API from '../API/fetchData';
 
 const ProductsContext = createContext();
@@ -6,6 +6,8 @@ const ProductsContext = createContext();
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+
+  const cartIconRef = useRef(null);
 
   useEffect(() => {
     API.getProducts().then((data) => setProducts(data));
@@ -22,10 +24,21 @@ function ProductsContextProvider(props) {
       return (acc += curr);
     }, 0);
 
+  function alertNotification() {
+    cartIconRef.current.classList.add('--alert-notification');
+
+    setTimeout(() => {
+      cartIconRef.current.classList.remove('--alert-notification');
+    }, 500);
+  }
+
   const removeItemFromCart = (product) =>
     cartProducts.filter((item) => item.id !== product.id);
 
-  const addItemToCart = (list, product) => [...list, product];
+  const addItemToCart = (list, product) => {
+    alertNotification();
+    return [...list, product];
+  };
 
   // add or remove item from shopping cart
   const toggleItemFromCart = (product) => {
@@ -56,6 +69,7 @@ function ProductsContextProvider(props) {
         isCurrentItemInCart,
         toggleItemFromCart,
         cartCounterValue,
+        cartIconRef,
       }}>
       {props.children}
     </ProductsContext.Provider>

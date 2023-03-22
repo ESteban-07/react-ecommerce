@@ -23,7 +23,7 @@ function ProductsContextProvider(props) {
         setProducts,
         cartProducts,
         setCartProducts,
-        currency
+        currency,
       }}>
       {props.children}
     </ProductsContext.Provider>

@@ -35,7 +35,7 @@ function ProductCard({ product }) {
                 : [...prevProducts, product];
             });
           }}
-          productTitle={product.title}
+          product={product}
         />
       </div>
     </div>

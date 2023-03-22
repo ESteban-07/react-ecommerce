@@ -1,19 +1,22 @@
-import { useState } from 'react';
+import { useProductsContext } from '../hooks/useProductsContext';
 import AddToCartIcon from '../assets/icons/bt_add_to_cart.svg';
 import AddedToCartIcon from '../assets/icons/bt_added_to_cart.svg';
 
-function AddToCartBtn({ handleClick, productTitle }) {
-  const [productState, setProductState] = useState(false);
+function AddToCartBtn({ handleClick, product }) {
+  const { cartProducts } = useProductsContext();
+
+  const isCurrentItemInCart = cartProducts.find(
+    (item) => item.id === product.id
+  );
 
   return (
     <button
       onClick={() => {
         handleClick();
-        setProductState((current) => !current);
       }}>
       <img
-        src={productState ? AddedToCartIcon : AddToCartIcon}
-        alt={`Add ${productTitle} to cart`}
+        src={isCurrentItemInCart ? AddedToCartIcon : AddToCartIcon}
+        alt={`Add ${product.title} to cart`}
       />
     </button>
   );

@@ -1,9 +1,9 @@
 import AddToCartBtn from './AddToCartBtn';
-import { useContext, useRef } from 'react';
-import { ProductsContext } from '../context/ProductsContext';
+import { useRef } from 'react';
+import { useProductsContext } from '../hooks/useProductsContext';
 
 function ProductCard({ product }) {
-  const { setCartProducts } = useContext(ProductsContext);
+  const { setCartProducts } = useProductsContext();
   const cardRef = useRef();
 
   return (

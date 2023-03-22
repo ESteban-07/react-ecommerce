@@ -1,8 +1,7 @@
-import { useContext } from 'react';
-import { ProductsContext } from '../context/ProductsContext';
+import { useProductsContext } from "../hooks/useProductsContext";
 
 function ShoppingCart() {
-  const { cartProducts } = useContext(ProductsContext);
+  const { cartProducts } = useProductsContext();
 
   return (
     <div>

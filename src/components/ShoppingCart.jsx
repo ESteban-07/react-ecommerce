@@ -2,19 +2,8 @@ import { useProductsContext } from '../hooks/useProductsContext';
 import RemoveItemFromCartIcon from '../assets/icons/icon_close.png';
 
 function ShoppingCart() {
-  const { currency, cartProducts, setCartProducts } = useProductsContext();
-
-  const totalPayment = cartProducts
-    .map((item) => item.price)
-    .reduce((acc, curr) => {
-      return (acc += curr);
-    }, 0);
-
-  const removeItemFromCart = (product) => {
-    setCartProducts((shoppingCartProducts) =>
-      shoppingCartProducts.filter((item) => item.id !== product.id)
-    );
-  };
+  const { currency, cartProducts, totalPayment, removeItemFromCart } =
+    useProductsContext();
 
   return (
     <div>

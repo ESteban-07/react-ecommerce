@@ -1,13 +1,11 @@
-import AddToCartBtn from './AddToCartBtn';
-import { useRef } from 'react';
 import { useProductsContext } from '../hooks/useProductsContext';
+import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {
-  const { setCartProducts, currency } = useProductsContext();
-  const cardRef = useRef();
+  const { currency, addItemToCart } = useProductsContext();
 
   return (
-    <div className="w-60" id={product.id} ref={cardRef}>
+    <div className="w-60" id={product.id}>
       <figure className="rounded-xl overflow-hidden">
         <img
           className="w-full h-full object-cover"
@@ -22,18 +20,7 @@ function ProductCard({ product }) {
         </div>
         <AddToCartBtn
           handleClick={() => {
-            // toggle styles to current card
-            // cardRef.current.classList.toggle('product-added');
-
-            setCartProducts((prevProducts) => {
-              const isProductAlreadyInCart = prevProducts.find(
-                (item) => item.id === product.id
-              );
-
-              return isProductAlreadyInCart
-                ? prevProducts.filter((item) => item.id !== product.id)
-                : [...prevProducts, product];
-            });
+            addItemToCart(product);
           }}
           product={product}
         />

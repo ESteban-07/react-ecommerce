@@ -3,7 +3,7 @@ import { useRef } from 'react';
 import { useProductsContext } from '../hooks/useProductsContext';
 
 function ProductCard({ product }) {
-  const { setCartProducts } = useProductsContext();
+  const { setCartProducts, currency } = useProductsContext();
   const cardRef = useRef();
 
   return (
@@ -17,7 +17,7 @@ function ProductCard({ product }) {
       </figure>
       <div className="flex justify-between">
         <div>
-          <p>{product.price}</p>
+          <p>{currency.format(product.price)}</p>
           <p>{product.title}</p>
         </div>
         <AddToCartBtn

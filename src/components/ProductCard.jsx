@@ -2,7 +2,7 @@ import { useProductsContext } from '../hooks/useProductsContext';
 import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {
-  const { currency, addItemToCart } = useProductsContext();
+  const { currency, toggleItemFromCart } = useProductsContext();
 
   return (
     <div className="w-60" id={product.id}>
@@ -20,7 +20,7 @@ function ProductCard({ product }) {
         </div>
         <AddToCartBtn
           handleClick={() => {
-            addItemToCart(product);
+            toggleItemFromCart(product);
           }}
           product={product}
         />

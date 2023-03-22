@@ -22,18 +22,13 @@ function ProductsContextProvider(props) {
       return (acc += curr);
     }, 0);
 
-  const addItemToCart = (product) => {
+  // Add or remove item from cart
+  const toggleItemFromCart = (product) => {
     setCartProducts((prevProducts) => {
       return isCurrentItemInCart(product)
         ? prevProducts.filter((item) => item.id !== product.id)
         : [...prevProducts, product];
     });
-  };
-
-  const removeItemFromCart = (product) => {
-    setCartProducts((shoppingCartProducts) =>
-      shoppingCartProducts.filter((item) => item.id !== product.id)
-    );
   };
 
   const isCurrentItemInCart = (product) => {
@@ -49,9 +44,8 @@ function ProductsContextProvider(props) {
         setCartProducts,
         currency,
         totalPayment,
-        addItemToCart,
-        removeItemFromCart,
         isCurrentItemInCart,
+        toggleItemFromCart,
       }}>
       {props.children}
     </ProductsContext.Provider>

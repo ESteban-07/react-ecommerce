@@ -2,7 +2,7 @@ import { useProductsContext } from '../hooks/useProductsContext';
 import RemoveItemFromCartIcon from '../assets/icons/icon_close.png';
 
 function ShoppingCart() {
-  const { currency, cartProducts, totalPayment, removeItemFromCart } =
+  const { currency, cartProducts, totalPayment, toggleItemFromCart } =
     useProductsContext();
 
   return (
@@ -17,7 +17,7 @@ function ShoppingCart() {
               </span>
               <button
                 className="border border-solid border-slate-600 px-2 py-2 mx-2 bg-transparent rounded"
-                onClick={() => removeItemFromCart(item)}>
+                onClick={() => toggleItemFromCart(item)}>
                 <img
                   src={RemoveItemFromCartIcon}
                   alt={`Remove ${item.title} from cart`}

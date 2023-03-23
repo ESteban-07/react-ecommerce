@@ -48,3 +48,9 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+/* change svg color to hospital green */
+.color-hospital-green {
+  filter: invert(88%) sepia(10%) saturate(779%) hue-rotate(77deg)
+    brightness(95%) contrast(85%);
+}

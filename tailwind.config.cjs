@@ -4,7 +4,8 @@ module.exports = {
   theme: {
     extend: {
       screens: {
-        mobile: { max: '650px' },
+        'mobile-m': { max: '375px' },
+        'mobile-l': { max: '650px' },
         tablet: { max: '800px' },
       },
       gridTemplateColumns: {

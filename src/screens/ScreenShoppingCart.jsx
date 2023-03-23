@@ -8,15 +8,15 @@ function ScreenShoppingCart() {
     useProductsContext();
 
   return (
-    <aside className="grid mobile:justify-center absolute top-[70px] right-0 bg-white shadow-md w-[360px] min-h-[550px] max-h-[calc(100vh-68px)] mobile:w-screen ">
-      <div className="w-full mobile:w-[360px] h-[inherit] flex flex-col justify-between ">
-        <div className="p-4">
+    <aside className="grid mobile-l:justify-center absolute top-[70px] right-0 bg-white shadow-md w-[360px] min-h-[550px]  mobile-l:w-screen">
+      <div className="flex flex-col justify-between w-[360px] h-[550px] mobile-m:w-screen mobile-l:min-h-[calc(100vh-68px)]">
+        <div className="p-4 mobile-l:hidden">
           <h1 className="font-bold text-[18px]">Shopping Cart</h1>
         </div>
 
         <div
           id="cart-items"
-          className="flex flex-col h-[360px] max-h-[500px] overflow-y-scroll scrollbar-hide">
+          className="flex flex-col min-h-[335px] max-h-[500px] overflow-y-scroll scrollbar-hide">
           {cartProducts.length === 0 ? (
             <img
               className="w-[80%] aspect-[1] self-center color-hospital-green"

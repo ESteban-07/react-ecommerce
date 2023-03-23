@@ -1,4 +1,4 @@
-import ShoppingCartNotification from './ShoppingCartNotification';
+import ShoppingCartNotification from './ShoppingCart/ShoppingCartNotification';
 import YardSaleLogo from '../assets/logos/logo_yard_sale.svg';
 import BurguerMenuIcon from '../assets/icons/icon_menu.svg';
 

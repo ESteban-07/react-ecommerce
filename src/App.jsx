@@ -1,4 +1,4 @@
-import MainGrid from 'components/MainGrid';
+import MainGrid from 'components/ProductsGrid/MainGrid';
 import Header from 'components/Header/Header';
 
 function App() {

@@ -1,5 +1,5 @@
-import { useProductsContext } from '../hooks/useProductsContext';
-import ProductCard from './ProductCard';
+import { useProductsContext } from '@/hooks/useProductsContext';
+import ProductCard from '@/components/ProductCard/ProductCard';
 
 function MainGrid() {
   const { products } = useProductsContext();

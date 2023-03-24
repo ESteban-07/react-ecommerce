@@ -1,6 +1,6 @@
-import { useContext } from 'react'
-import {ProductsContext} from  '../context/ProductsContext'
+import { useContext } from 'react';
+import { ProductsContext } from '@/context/ProductsContext';
 
 export function useProductsContext() {
-  return useContext(ProductsContext)
+  return useContext(ProductsContext);
 }

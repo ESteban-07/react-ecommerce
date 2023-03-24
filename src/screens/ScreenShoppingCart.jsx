@@ -1,6 +1,6 @@
-import { useProductsContext } from '../hooks/useProductsContext';
-import PrimaryButton from '../components/PrimaryButton';
-import CartItems from '../components/ShoppingCart/CartItemsList';
+import { useProductsContext } from '@/hooks/useProductsContext';
+import PrimaryButton from '@/components/PrimaryButton';
+import CartItems from '@/components/ShoppingCart/CartItemsList';
 
 function ScreenShoppingCart() {
   const { currency, totalPayment } = useProductsContext();

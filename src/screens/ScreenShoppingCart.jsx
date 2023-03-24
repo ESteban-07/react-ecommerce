@@ -1,5 +1,5 @@
 import { useProductsContext } from 'hooks/useProductsContext';
-import PrimaryButton from 'components/PrimaryButton';
+import PrimaryButton from 'components/Buttons/PrimaryButton';
 import CartItems from 'components/ShoppingCart/CartItemsList';
 
 function ScreenShoppingCart() {

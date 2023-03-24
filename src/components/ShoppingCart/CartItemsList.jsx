@@ -1,4 +1,4 @@
-import { useProductsContext } from '@/hooks/useProductsContext';
+import { useProductsContext } from 'hooks/useProductsContext';
 import EmptyCartImage from './EmpetyCartImage';
 import CartItem from './CartItem';
 

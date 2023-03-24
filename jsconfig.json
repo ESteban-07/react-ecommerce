@@ -2,7 +2,15 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["src/*"],
+      "API/*": ["src/API/*"],
+      "assets/*": ["src/assets/*"],
+      "icons/*": ["src/assets/icons/*"],
+      "logos/*": ["src/assets/logos/*"],
+      "components/*": ["src/components/*"],
+      "hooks/*": ["src/hooks/*"],
+      "context/*": ["src/context/*"],
+      "screens/*": ["src/screens/*"]
     }
   },
   "include": ["src"],

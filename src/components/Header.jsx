@@ -1,6 +1,6 @@
 import ShoppingCartNotification from './ShoppingCart/ShoppingCartNotification';
-import YardSaleLogo from '@/assets/logos/logo_yard_sale.svg';
-import BurguerMenuIcon from '@/assets/icons/icon_menu.svg';
+import YardSaleLogo from 'logos/logo_yard_sale.svg';
+import BurguerMenuIcon from 'icons/icon_menu.svg';
 
 function Header() {
   return (

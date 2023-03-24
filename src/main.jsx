@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client';
-import App from './App';
+import { ProductsContextProvider } from 'context/ProductsContext';
 import './index.css';
-import { ProductsContextProvider } from './context/ProductsContext';
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <ProductsContextProvider>

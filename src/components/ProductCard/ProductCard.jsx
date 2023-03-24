@@ -1,4 +1,4 @@
-import { useProductsContext } from '@/hooks/useProductsContext';
+import { useProductsContext } from 'hooks/useProductsContext';
 import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {

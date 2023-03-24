@@ -1,4 +1,4 @@
-import EmptyCartIcon from '@/assets/icons/icon_shopping_cart.svg';
+import EmptyCartIcon from 'icons/icon_shopping_cart.svg';
 
 function EmptyCartImage() {
   return (

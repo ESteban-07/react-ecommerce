@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
-import { useProductsContext } from '@/hooks/useProductsContext';
-import ScreenShoppingCart from '@/screens/ScreenShoppingCart';
-import ShoppingCartIcon from '@/assets/icons/icon_shopping_cart_notification.svg';
+import { useProductsContext } from 'hooks/useProductsContext';
+import ScreenShoppingCart from 'screens/ScreenShoppingCart';
+import ShoppingCartIcon from 'icons/icon_shopping_cart_notification.svg';
 
 function ShoppingCartNotification() {
   const { cartCounterValue, cartIconRef } = useProductsContext();

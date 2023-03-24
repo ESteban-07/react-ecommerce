@@ -1,6 +1,6 @@
-import { useProductsContext } from '@/hooks/useProductsContext';
-import AddToCartIcon from '@/assets/icons/bt_add_to_cart.svg';
-import AddedToCartIcon from '@/assets/icons/bt_added_to_cart.svg';
+import { useProductsContext } from 'hooks/useProductsContext';
+import AddToCartIcon from 'icons/bt_add_to_cart.svg';
+import AddedToCartIcon from 'icons/bt_added_to_cart.svg';
 
 function AddToCartBtn({ handleClick, product }) {
   const { isCurrentItemInCart } = useProductsContext();

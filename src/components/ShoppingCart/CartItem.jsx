@@ -1,5 +1,5 @@
-import { useProductsContext } from '@/hooks/useProductsContext';
-import RemoveItemFromCartIcon from '@/assets/icons/icon_close.png';
+import { useProductsContext } from 'hooks/useProductsContext';
+import RemoveItemFromCartIcon from 'icons/icon_close.png';
 
 function CartItem({ item }) {
   const { currency, toggleItemFromCart } = useProductsContext();

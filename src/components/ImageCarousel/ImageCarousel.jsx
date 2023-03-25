@@ -5,8 +5,10 @@ function ImageCarousel({ images }) {
   const { slideSelection, setSlideSelection } = useProductsContext();
 
   return (
-    <div id="image-carousel" className="relative w-[360px] h-[360px]">
-      <div id="slides-container" className="w-[360px] h-[360px]">
+    <div
+      id="image-carousel"
+      className="relative w-[360px] h-[360px] mobile-m:w-screen">
+      <div id="slides-container" className="w-full h-full">
         {images.map((image, idx) => {
           return (
             <div

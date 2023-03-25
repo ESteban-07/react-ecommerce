@@ -13,7 +13,7 @@ function ScreenProductDetails() {
   } = useProductsContext();
 
   return (
-    <aside className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md">
+    <aside className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center">
       <button
         onClick={() => {
           setIsOpened(false);
@@ -24,8 +24,10 @@ function ScreenProductDetails() {
         <img src={IconClose} alt="Close product details" />
       </button>
       <ImageCarousel images={product.images} />
-      <div id="item-details" className="flex flex-col p-5 flex-grow-[1]">
-        <div className="flex flex-col h-full justify-between">
+      <div
+        id="item-details"
+        className="flex flex-col p-5 flex-grow-[1] mobile-l:w-full mobile-l:grow-0 mobile-m:w-screen">
+        <div className="flex flex-col h-full justify-between mobile:h-auto mobile-l:gap-2">
           <div>
             <p className="font-extrabold">{currency.format(product.price)}</p>
             <p className="text-[14px]">{product.title}</p>

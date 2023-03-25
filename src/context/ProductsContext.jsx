@@ -6,6 +6,8 @@ const ProductsContext = createContext();
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+  const [currentItem, setCurrentItem] = useState({});
+  const [isOpened, setIsOpened] = useState(false);
 
   const cartIconRef = useRef(null);
 
@@ -70,6 +72,10 @@ function ProductsContextProvider(props) {
         toggleItemFromCart,
         cartCounterValue,
         cartIconRef,
+        currentItem,
+        setCurrentItem,
+        isOpened,
+        setIsOpened,
       }}>
       {props.children}
     </ProductsContext.Provider>

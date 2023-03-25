@@ -2,11 +2,17 @@ import { useProductsContext } from 'hooks/useProductsContext';
 import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {
-  const { currency, toggleItemFromCart } = useProductsContext();
+  const { currency, toggleItemFromCart, setCurrentItem, setIsOpened } =
+    useProductsContext();
 
   return (
     <div className="w-60" id={product.id}>
-      <figure className="rounded-xl overflow-hidden">
+      <figure
+        className="rounded-xl overflow-hidden"
+        onClick={() => {
+          setIsOpened(true);
+          setCurrentItem(product);
+        }}>
         <img
           className="w-full h-full object-cover"
           src={product.images[0]}

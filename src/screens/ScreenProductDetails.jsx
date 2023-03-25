@@ -20,7 +20,7 @@ function ScreenProductDetails() {
           setCurrentItem({});
         }}
         id="product-details-close"
-        className="absolute top-3 left-3 z-[8] w-[40px] aspect-square rounded-full bg-white p-3 flex justify-center items-center">
+        className="absolute top-3 left-3 z-[8] w-[40px] aspect-square rounded-full bg-white p-3 flex justify-center items-center shadow-lg">
         <img src={IconClose} alt="Close product details" />
       </button>
       <ImageCarousel images={product.images} />

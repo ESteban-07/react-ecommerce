@@ -5,7 +5,7 @@ function ImageCarousel({ images }) {
   const { slideSelection, setSlideSelection } = useProductsContext();
 
   return (
-    <div id="image-carousel" className="w-[360px] h-[360px]">
+    <div id="image-carousel" className="relative w-[360px] h-[360px]">
       <div id="slides-container" className="w-[360px] h-[360px]">
         {images.map((image, idx) => {
           return (
@@ -24,7 +24,9 @@ function ImageCarousel({ images }) {
           );
         })}
       </div>
-      <div id="slides-nav" className="w-full flex justify-center gap-2 my-4">
+      <div
+        id="slides-nav"
+        className="absolute w-full flex justify-center gap-2 mt-2">
         {images.map((item, idx) => {
           return (
             <span

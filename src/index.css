@@ -86,4 +86,5 @@ body {
 .--added-to-cart-btn {
   background-color: white;
   color: #acd9b2;
+  border: 1px solid #acd9b2;
 }

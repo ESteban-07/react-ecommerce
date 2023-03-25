@@ -29,7 +29,7 @@ function ProductCard({ product }) {
       </figure>
       <div className="flex justify-between">
         <div>
-          <p>{currency.format(product.price)}</p>
+          <p className="font-extrabold">{currency.format(product.price)}</p>
           <p>{product.title}</p>
         </div>
         <AddToCartBtn

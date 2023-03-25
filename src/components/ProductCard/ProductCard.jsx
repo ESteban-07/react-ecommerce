@@ -2,8 +2,13 @@ import { useProductsContext } from 'hooks/useProductsContext';
 import AddToCartBtn from './AddToCartBtn';
 
 function ProductCard({ product }) {
-  const { currency, toggleItemFromCart, setCurrentItem, setIsOpened } =
-    useProductsContext();
+  const {
+    currency,
+    toggleItemFromCart,
+    setCurrentItem,
+    setIsOpened,
+    setSlideSelection,
+  } = useProductsContext();
 
   return (
     <div className="w-60" id={product.id}>
@@ -12,6 +17,9 @@ function ProductCard({ product }) {
         onClick={() => {
           setIsOpened(true);
           setCurrentItem(product);
+
+          // reset product details slider to initial image
+          setSlideSelection(0);
         }}>
         <img
           className="w-full h-full object-cover"

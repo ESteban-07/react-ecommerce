@@ -1,7 +1,8 @@
 import { useState } from 'react';
+import { useProductsContext } from 'hooks/useProductsContext';
 
 function ImageCarousel({ images }) {
-  const [slideSelection, setSlideSelection] = useState(0);
+  const { slideSelection, setSlideSelection } = useProductsContext();
 
   return (
     <div id="image-carousel" className="w-[360px] h-[360px]">

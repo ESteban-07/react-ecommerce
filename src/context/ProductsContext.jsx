@@ -6,8 +6,11 @@ const ProductsContext = createContext();
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState([]);
+
+  // States for ProductDetails components
   const [currentItem, setCurrentItem] = useState({});
   const [isOpened, setIsOpened] = useState(false);
+  const [slideSelection, setSlideSelection] = useState(0);
 
   const cartIconRef = useRef(null);
 
@@ -76,6 +79,8 @@ function ProductsContextProvider(props) {
         setCurrentItem,
         isOpened,
         setIsOpened,
+        slideSelection,
+        setSlideSelection,
       }}>
       {props.children}
     </ProductsContext.Provider>

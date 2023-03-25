@@ -4,7 +4,8 @@ import ScreenShoppingCart from 'screens/ScreenShoppingCart';
 import ShoppingCartIcon from 'icons/icon_shopping_cart_notification.svg';
 
 function ShoppingCartNotification() {
-  const { cartCounterValue, cartIconRef } = useProductsContext();
+  const { cartCounterValue, cartIconRef, setCurrentItem, setIsOpened } =
+    useProductsContext();
   const [display, setDisplay] = useState(false);
 
   // ScreenShoppingCart fixed to viewport
@@ -20,6 +21,10 @@ function ShoppingCartNotification() {
         ref={cartIconRef}
         className="relative w-10 cursor-pointer"
         onClick={() => {
+          // close ScreenProductDetails and reset
+          // currentItem to initial value
+          setIsOpened(false);
+          setCurrentItem({});
           setDisplay((current) => !current);
         }}>
         <span className="absolute top-[5.5px] right-[5px] text-[12px] leading-[0] font-bold">

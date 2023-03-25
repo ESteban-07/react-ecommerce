@@ -8,7 +8,7 @@ function ProductCard({ product }) {
   return (
     <div className="w-60" id={product.id}>
       <figure
-        className="rounded-xl overflow-hidden"
+        className="rounded-xl overflow-hidden cursor-pointer"
         onClick={() => {
           setIsOpened(true);
           setCurrentItem(product);

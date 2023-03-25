@@ -54,3 +54,32 @@
   filter: invert(88%) sepia(10%) saturate(779%) hue-rotate(77deg)
     brightness(95%) contrast(85%);
 }
+
+.slide-btn {
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: #f7f7f7;
+  border: 1px solid #c7c7c7;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.--slide-selected {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.--btn-selected {
+  background-color: #c7c7c7;
+}
+
+.--add-to-cart-btn {
+  background-color: #acd9b2;
+  color: white;
+}
+.--added-to-cart-btn {
+  background-color: white;
+  color: #acd9b2;
+}

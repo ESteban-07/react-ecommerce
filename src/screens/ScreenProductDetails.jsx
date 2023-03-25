@@ -13,7 +13,7 @@ function ScreenProductDetails() {
   } = useProductsContext();
 
   return (
-    <aside className="absolute flex flex-col justify-between w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-green-600">
+    <aside className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md">
       <button
         onClick={() => {
           setIsOpened(false);
@@ -24,16 +24,22 @@ function ScreenProductDetails() {
         <img src={IconClose} alt="Close product details" />
       </button>
       <ImageCarousel images={product.images} />
-      <div id="item-details" className="mt-8 mx-6 mb-6">
-        <p>{currency.format(product.price)}</p>
-        <p>{product.title}</p>
-        <p>{product.description}</p>
-        <AddToCartBtn
-          handleClick={() => {
-            toggleItemFromCart(product);
-          }}
-          product={product}
-        />
+      <div id="item-details" className="flex flex-col p-5 flex-grow-[1]">
+        <div className="flex flex-col h-full justify-between">
+          <div>
+            <p className="font-extrabold">{currency.format(product.price)}</p>
+            <p className="text-[14px]">{product.title}</p>
+            <p className="text-[13px]">{product.description}</p>
+          </div>
+          <div>
+            <AddToCartBtn
+              handleClick={() => {
+                toggleItemFromCart(product);
+              }}
+              product={product}
+            />
+          </div>
+        </div>
       </div>
     </aside>
   );

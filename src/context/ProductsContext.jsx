@@ -5,7 +5,9 @@ const ProductsContext = createContext();
 
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
-  const [cartProducts, setCartProducts] = useState([]);
+  const [cartProducts, setCartProducts] = useState(
+    JSON.parse(localStorage.getItem('cartProducts')) || []
+  );
 
   // States for ProductDetails components
   const [currentItem, setCurrentItem] = useState({});
@@ -35,6 +37,11 @@ function ProductsContextProvider(props) {
   useEffect(() => {
     API.getProducts().then((data) => setProducts(data));
   }, []);
+
+  // implement localStorage for cartProducts
+  useEffect(() => {
+    localStorage.setItem('cartProducts', JSON.stringify(cartProducts));
+  }, [cartProducts]);
 
   const currency = new Intl.NumberFormat('en-US', {
     style: 'currency',
@@ -75,7 +82,7 @@ function ProductsContextProvider(props) {
   // checks if current item is already added in cart
   // returns true or false
   const isCurrentItemInCart = (product) => {
-    return cartProducts.includes(product);
+    return cartProducts.some((item) => item.id === product.id);
   };
 
   const cartCounterValue = cartProducts.length;

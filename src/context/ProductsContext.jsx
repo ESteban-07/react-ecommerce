@@ -11,8 +11,26 @@ function ProductsContextProvider(props) {
   const [currentItem, setCurrentItem] = useState({});
   const [isOpened, setIsOpened] = useState(false);
   const [slideSelection, setSlideSelection] = useState(0);
+  const [screenDetailsHeight, setScreenDetailsHeight] = useState(0);
 
+  // adapting ProductsGrid layout on mobile phones
+  const mediaMatch = window.matchMedia('(max-width:600px)');
+
+  const [matches, setMatches] = useState(mediaMatch.matches);
+
+  mediaMatch.addEventListener('change', (e) => {
+    setMatches(e.matches);
+  });
+
+  // referencing DOM elements
   const cartIconRef = useRef(null);
+  const ScreenProductDetailsRef = useRef(null);
+
+  useEffect(() => {
+    if (isOpened) {
+      setScreenDetailsHeight(ScreenProductDetailsRef.current.clientHeight);
+    }
+  });
 
   useEffect(() => {
     API.getProducts().then((data) => setProducts(data));
@@ -81,6 +99,9 @@ function ProductsContextProvider(props) {
         setIsOpened,
         slideSelection,
         setSlideSelection,
+        ScreenProductDetailsRef,
+        screenDetailsHeight,
+        matches,
       }}>
       {props.children}
     </ProductsContext.Provider>

@@ -10,10 +10,13 @@ function ScreenProductDetails() {
     toggleItemFromCart,
     setCurrentItem,
     setIsOpened,
+    ScreenProductDetailsRef,
   } = useProductsContext();
 
   return (
-    <aside className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center">
+    <aside
+      className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center"
+      ref={ScreenProductDetailsRef}>
       <button
         onClick={() => {
           setIsOpened(false);
@@ -31,7 +34,7 @@ function ScreenProductDetails() {
           <div>
             <p className="font-extrabold">{currency.format(product.price)}</p>
             <p className="text-[14px]">{product.title}</p>
-            <p className="text-[13px]">{product.description}</p>
+            <p className="text-[13px] break-words">{product.description}</p>
           </div>
           <div>
             <AddToCartBtn

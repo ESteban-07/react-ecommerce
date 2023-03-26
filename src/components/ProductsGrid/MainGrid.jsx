@@ -2,7 +2,7 @@ import { useProductsContext } from 'hooks/useProductsContext';
 import ProductCard from 'components/ProductCard/ProductCard';
 
 function MainGrid() {
-  const { isOpened, mediaMatch, products, screenDetailsHeight, matches } =
+  const { isOpened, products, screenDetailsHeight, matches } =
     useProductsContext();
 
   return (

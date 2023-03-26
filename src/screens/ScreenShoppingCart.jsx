@@ -6,7 +6,7 @@ function ScreenShoppingCart() {
   const { currency, totalPayment } = useProductsContext();
 
   return (
-    <aside className="grid mobile-l:justify-center absolute top-[70px] right-0 bg-white shadow-md w-[360px] min-h-[550px]  mobile-l:w-screen">
+    <aside className="grid mobile-l:justify-center absolute top-[70px] right-0 bg-white shadow-md w-[360px] min-h-[550px]  mobile-l:w-screen z-[12]">
       <div className="flex flex-col justify-between w-[360px] h-[550px] mobile-m:w-screen mobile-l:min-h-[calc(100vh-68px)]">
         <div className="p-4 mobile-l:hidden">
           <h1 className="font-bold text-[18px]">Shopping Cart</h1>

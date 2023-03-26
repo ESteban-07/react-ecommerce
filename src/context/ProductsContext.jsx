@@ -80,6 +80,10 @@ function ProductsContextProvider(props) {
 
   const cartCounterValue = cartProducts.length;
 
+  const smoothScrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <ProductsContext.Provider
       value={{
@@ -102,6 +106,7 @@ function ProductsContextProvider(props) {
         ScreenProductDetailsRef,
         screenDetailsHeight,
         matches,
+        smoothScrollToTop,
       }}>
       {props.children}
     </ProductsContext.Provider>

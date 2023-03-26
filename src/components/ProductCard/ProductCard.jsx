@@ -8,6 +8,8 @@ function ProductCard({ product }) {
     setCurrentItem,
     setIsOpened,
     setSlideSelection,
+    matches,
+    smoothScrollToTop,
   } = useProductsContext();
 
   return (
@@ -15,6 +17,11 @@ function ProductCard({ product }) {
       <figure
         className="rounded-xl overflow-hidden cursor-pointer"
         onClick={() => {
+          // if media query matches mobile screen viewport
+          // when user clicks image product card
+          // fire smootScrollToTop event
+          if (matches) smoothScrollToTop();
+
           setIsOpened(true);
           setCurrentItem(product);
 

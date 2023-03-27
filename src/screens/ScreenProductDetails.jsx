@@ -9,8 +9,8 @@ function ScreenProductDetails() {
     currency,
     toggleItemFromCart,
     setCurrentItem,
-    setIsOpened,
     ScreenProductDetailsRef,
+    closeProductDetails,
   } = useProductsContext();
 
   return (
@@ -19,7 +19,7 @@ function ScreenProductDetails() {
       ref={ScreenProductDetailsRef}>
       <button
         onClick={() => {
-          setIsOpened(false);
+          closeProductDetails();
           setCurrentItem({});
         }}
         id="product-details-close"

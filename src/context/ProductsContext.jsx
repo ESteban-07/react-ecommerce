@@ -1,5 +1,6 @@
 import { useState, useEffect, createContext, useRef } from 'react';
 import * as API from 'API/fetchData';
+import { useBoolean } from 'hooks/useBoolean';
 
 const ProductsContext = createContext();
 
@@ -9,11 +10,23 @@ function ProductsContextProvider(props) {
     JSON.parse(localStorage.getItem('cartProducts')) || []
   );
 
-  // States for ProductDetails components
+  // states for product details
   const [currentItem, setCurrentItem] = useState({});
-  const [isOpened, setIsOpened] = useState(false);
   const [slideSelection, setSlideSelection] = useState(0);
   const [screenDetailsHeight, setScreenDetailsHeight] = useState(0);
+
+  // toggle state for ScreenProductDetails
+  const [
+    isProductDetailsOpen,
+    {
+      toggle: toggleProductDetails,
+      on: openProductDetails,
+      off: closeProductDetails,
+    },
+  ] = useBoolean();
+
+  // toggle state for ScreenShoppingCart
+  const [isCartOpen, { toggle: toggleCart }] = useBoolean();
 
   // adapting ProductsGrid layout on mobile phones
   const mediaMatch = window.matchMedia('(max-width:600px)');
@@ -29,7 +42,7 @@ function ProductsContextProvider(props) {
   const ScreenProductDetailsRef = useRef(null);
 
   useEffect(() => {
-    if (isOpened) {
+    if (isProductDetailsOpen) {
       setScreenDetailsHeight(ScreenProductDetailsRef.current.clientHeight);
     }
   });
@@ -106,8 +119,12 @@ function ProductsContextProvider(props) {
         cartIconRef,
         currentItem,
         setCurrentItem,
-        isOpened,
-        setIsOpened,
+        isCartOpen,
+        toggleCart,
+        isProductDetailsOpen,
+        toggleProductDetails,
+        openProductDetails,
+        closeProductDetails,
         slideSelection,
         setSlideSelection,
         ScreenProductDetailsRef,

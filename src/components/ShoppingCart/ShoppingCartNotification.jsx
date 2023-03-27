@@ -1,19 +1,25 @@
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useProductsContext } from 'hooks/useProductsContext';
 import ScreenShoppingCart from 'screens/ScreenShoppingCart';
 import ShoppingCartIcon from 'icons/icon_shopping_cart_notification.svg';
+import { useBoolean } from 'hooks/useBoolean';
 
 function ShoppingCartNotification() {
-  const { cartCounterValue, cartIconRef, setCurrentItem, setIsOpened } =
-    useProductsContext();
-  const [display, setDisplay] = useState(false);
+  const {
+    cartCounterValue,
+    cartIconRef,
+    setCurrentItem,
+    isCartOpen,
+    toggleCart,
+    closeProductDetails,
+  } = useProductsContext();
 
   // ScreenShoppingCart fixed to viewport
   useEffect(() => {
-    display
+    isCartOpen
       ? document.body.classList.add('mobile-l:overflow-hidden')
       : document.body.classList.remove('mobile-l:overflow-hidden');
-  }, [display]);
+  }, [isCartOpen]);
 
   return (
     <>
@@ -23,9 +29,10 @@ function ShoppingCartNotification() {
         onClick={() => {
           // close ScreenProductDetails and reset
           // currentItem to initial value
-          setIsOpened(false);
+          closeProductDetails();
           setCurrentItem({});
-          setDisplay((current) => !current);
+
+          toggleCart();
         }}>
         <span className="absolute top-[5.5px] right-[5px] text-[12px] leading-[0] font-bold">
           {cartCounterValue}
@@ -36,7 +43,7 @@ function ShoppingCartNotification() {
           alt="Shopping cart notifications"
         />
       </div>
-      {display && <ScreenShoppingCart />}
+      {isCartOpen && <ScreenShoppingCart />}
     </>
   );
 }

@@ -4,13 +4,13 @@ import ScreenProductDetails from 'screens/ScreenProductDetails';
 import { useProductsContext } from 'hooks/useProductsContext';
 
 function App() {
-  const { isOpened } = useProductsContext();
+  const { isProductDetailsOpen } = useProductsContext();
 
   return (
     <>
       <Header />
       <MainGrid />
-      {isOpened && <ScreenProductDetails />}
+      {isProductDetailsOpen && <ScreenProductDetails />}
     </>
   );
 }

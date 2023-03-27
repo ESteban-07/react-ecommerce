@@ -6,10 +6,10 @@ function ProductCard({ product }) {
     currency,
     toggleItemFromCart,
     setCurrentItem,
-    setIsOpened,
     setSlideSelection,
     matches,
     smoothScrollToTop,
+    openProductDetails,
   } = useProductsContext();
 
   return (
@@ -22,7 +22,7 @@ function ProductCard({ product }) {
           // fire smootScrollToTop event
           if (matches) smoothScrollToTop();
 
-          setIsOpened(true);
+          openProductDetails();
           setCurrentItem(product);
 
           // reset product details slider to initial image

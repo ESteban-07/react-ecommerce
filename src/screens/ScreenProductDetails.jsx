@@ -15,7 +15,7 @@ function ScreenProductDetails() {
 
   return (
     <aside
-      className="absolute flex flex-col w-[360px] h-[calc(100vh-70px)] top-[70px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center"
+      className="absolute flex flex-col w-[360px] top-[70px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center"
       ref={ScreenProductDetailsRef}>
       <button
         onClick={() => {
@@ -30,7 +30,7 @@ function ScreenProductDetails() {
       <div
         id="item-details"
         className="flex flex-col p-5 flex-grow-[1] mobile-l:w-full mobile-l:grow-0 mobile-m:w-screen">
-        <div className="flex flex-col h-full justify-between mobile:h-auto mobile-l:gap-2">
+        <div className="flex flex-col h-full justify-between mobile:h-auto gap-2">
           <div>
             <p className="font-extrabold">{currency.format(product.price)}</p>
             <p className="text-[14px]">{product.title}</p>

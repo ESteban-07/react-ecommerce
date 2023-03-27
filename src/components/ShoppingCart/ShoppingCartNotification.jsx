@@ -2,7 +2,6 @@ import { useEffect } from 'react';
 import { useProductsContext } from 'hooks/useProductsContext';
 import ScreenShoppingCart from 'screens/ScreenShoppingCart';
 import ShoppingCartIcon from 'icons/icon_shopping_cart_notification.svg';
-import { useBoolean } from 'hooks/useBoolean';
 
 function ShoppingCartNotification() {
   const {
@@ -12,6 +11,8 @@ function ShoppingCartNotification() {
     isCartOpen,
     toggleCart,
     closeProductDetails,
+    matches,
+    isProductDetailsOpen,
   } = useProductsContext();
 
   // ScreenShoppingCart fixed to viewport
@@ -29,8 +30,12 @@ function ShoppingCartNotification() {
         onClick={() => {
           // close ScreenProductDetails and reset
           // currentItem to initial value
-          closeProductDetails();
-          setCurrentItem({});
+
+          if (isProductDetailsOpen && !matches) {
+            closeProductDetails();
+            setCurrentItem({});
+            console.log('no');
+          }
 
           toggleCart();
         }}>

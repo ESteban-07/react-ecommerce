@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { useProductsContext } from 'hooks/useProductsContext';
 
 function ImageCarousel({ images }) {
@@ -8,7 +7,7 @@ function ImageCarousel({ images }) {
     <div
       id="image-carousel"
       className="relative w-[360px] h-[360px] mobile-m:w-screen">
-      <div id="slides-container" className="w-full h-full">
+      <div id="slides-container" className="w-full h-full overflow-hidden">
         {images.map((image, idx) => {
           return (
             <div
@@ -18,7 +17,7 @@ function ImageCarousel({ images }) {
                 idx === slideSelection ? '--slide-selected' : 'hidden'
               }`}>
               <img
-                className="mx-w-full aspect-square object-cover"
+                className="mx-w-full aspect-square mobile-m:h-full object-cover"
                 src={image}
                 alt="Product image"
               />

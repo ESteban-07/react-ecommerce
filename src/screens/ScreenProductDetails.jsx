@@ -15,7 +15,7 @@ function ScreenProductDetails() {
 
   return (
     <aside
-      className="absolute flex flex-col w-[360px] h-[calc(100vh-68px)] top-[68px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center"
+      className="absolute flex flex-col w-[360px] h-[calc(100vh-70px)] top-[70px] right-0 z-10 bg-white shadow-md mobile-l:w-full mobile-l:h-auto mobile-l:items-center"
       ref={ScreenProductDetailsRef}>
       <button
         onClick={() => {

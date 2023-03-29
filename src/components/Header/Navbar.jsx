@@ -1,6 +1,5 @@
 import { useProductsContext } from '@/hooks/useProductsContext';
-import * as API from 'API/fetchData';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 
 function Navbar() {
   const categories = [
@@ -12,7 +11,7 @@ function Navbar() {
     { id: 5, name: 'Others' },
   ];
 
-  const { products, setProducts } = useProductsContext();
+  const { products, setFilteredProducts } = useProductsContext();
 
   const [activeBtn, setActiveBtn] = useState(0);
 
@@ -31,16 +30,13 @@ function Navbar() {
               }
               onClick={async () => {
                 setActiveBtn(idx);
-                // Fetching data
-                if (category.id !== 0) {
-                  return API.getProductsByCategory(category.id).then(
-                    (productsFiltered) => {
-                      setProducts(productsFiltered);
-                    }
-                  );
-                }
-
-                API.getProducts().then((data) => setProducts(data));
+                category.name !== 'All'
+                  ? setFilteredProducts(() => {
+                      return products.filter(
+                        (product) => product.category.id === category.id
+                      );
+                    })
+                  : setFilteredProducts(products);
               }}>
               {category.name}
             </button>

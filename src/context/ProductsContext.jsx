@@ -6,6 +6,7 @@ const ProductsContext = createContext();
 
 function ProductsContextProvider(props) {
   const [products, setProducts] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState([]);
   const [cartProducts, setCartProducts] = useState(
     JSON.parse(localStorage.getItem('cartProducts')) || []
   );
@@ -48,7 +49,11 @@ function ProductsContextProvider(props) {
   });
 
   useEffect(() => {
-    API.getProducts().then((data) => setProducts(data));
+    API.getProducts().then((data) => {
+      setProducts(data);
+      // initialize filtered products with full stock
+      setFilteredProducts(data);
+    });
   }, []);
 
   // implement localStorage for cartProducts
@@ -108,7 +113,8 @@ function ProductsContextProvider(props) {
     <ProductsContext.Provider
       value={{
         products,
-        setProducts,
+        filteredProducts,
+        setFilteredProducts,
         cartProducts,
         setCartProducts,
         currency,

@@ -2,8 +2,12 @@ import { useProductsContext } from 'hooks/useProductsContext';
 import ProductCard from 'components/ProductCard/ProductCard';
 
 function MainGrid() {
-  const { products, screenDetailsHeight, matches, isProductDetailsOpen } =
-    useProductsContext();
+  const {
+    screenDetailsHeight,
+    matches,
+    isProductDetailsOpen,
+    filteredProducts,
+  } = useProductsContext();
 
   return (
     <div
@@ -12,7 +16,7 @@ function MainGrid() {
         top:
           isProductDetailsOpen && matches ? `${screenDetailsHeight}px` : '0px',
       }}>
-      {products.map((product) => (
+      {filteredProducts.map((product) => (
         <ProductCard key={product.id} product={product} />
       ))}
     </div>

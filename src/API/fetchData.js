@@ -9,3 +9,15 @@ export async function getProducts() {
     console.log(err);
   }
 }
+
+export async function getProductsByCategory(categoryID) {
+  try {
+    const response = await fetch(
+      `https://api.escuelajs.co/api/v1/products/?categoryId=${categoryID}&offset=0&limit=3`
+    );
+    const data = await response.json();
+    return data;
+  } catch (err) {
+    console.log(err);
+  }
+}

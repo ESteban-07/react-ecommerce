@@ -1,6 +1,7 @@
 import ShoppingCartNotification from 'components/ShoppingCart/ShoppingCartNotification';
 import YardSaleLogo from 'logos/logo_yard_sale.svg';
 import BurguerMenuIcon from 'icons/icon_menu.svg';
+import Navbar from './Navbar';
 
 function Header() {
   return (
@@ -12,15 +13,7 @@ function Header() {
         <div>
           <img src={YardSaleLogo} alt="Yard sale logo" />
         </div>
-        <nav className="tablet:hidden">
-          <ul className="flex gap-4">
-            <li>Clothes</li>
-            <li>Electronics</li>
-            <li>Furniture</li>
-            <li>Toys</li>
-            <li>Others</li>
-          </ul>
-        </nav>
+        <Navbar />
       </div>
       <div id="views" className="flex justify-center items-center gap-4">
         <p className="tablet:hidden">platzi@example.com</p>

@@ -34,7 +34,6 @@ function ShoppingCartNotification() {
           if (isProductDetailsOpen && !matches) {
             closeProductDetails();
             setCurrentItem({});
-            console.log('no');
           }
 
           toggleCart();
